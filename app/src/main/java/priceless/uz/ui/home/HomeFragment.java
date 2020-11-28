@@ -138,7 +138,7 @@ public class HomeFragment extends Fragment {
 //            String personEmail = account.getEmail();
 //            String personId = account.getId();
 //            Uri personPhoto = account.getPhotoUrl();
-            Log.w("Error", "personName=" + account.getDisplayName());
+//            Log.w("Error", "personName=" + account.getDisplayName());
 
             displayName.setText(account.getDisplayName());
             email.setText(account.getEmail());
