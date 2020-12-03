@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 //            String personEmail = account.getEmail();
 //            String personId = account.getId();
 //            Uri personPhoto = account.getPhotoUrl();
-//            Log.w("Error", "personName=" + account.getDisplayName());
+            Log.w("Error", "id = " + account.getId());
 
             displayName2_variable.setText(account.getDisplayName());
             email2_variable.setText(account.getEmail());
