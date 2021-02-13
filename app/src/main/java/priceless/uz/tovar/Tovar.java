@@ -1,5 +1,6 @@
 package priceless.uz.tovar;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -7,6 +8,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+@Keep
 @Entity(tableName = "tovar_table")
 public class Tovar implements Serializable {
 
@@ -20,8 +22,17 @@ public class Tovar implements Serializable {
     @ColumnInfo(name = "shtrix_kod")
     private String shtrix_kod;
 
+    public Tovar(int id, @NonNull String nomi, String shtrix_kod) {
+        this.id = id;
+        this.nomi = nomi;
+        this.shtrix_kod = shtrix_kod;
+    }
 
-
+    public Tovar() {
+        this.id = 0;
+        this.nomi = "0";
+        this.shtrix_kod = "0";
+    }
 
     public int getId() {
         return id;

@@ -12,14 +12,23 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="priceless.uz.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_tovar"
+        android:name="priceless.uz.tovar.TovarFragment"
+        android:label="@string/menu_tovar"
+        tools:layout="@layout/fragment_tovar">
+        <action
+            android:id="@+id/action_nav_gallery_to_add_new_tovar_fragment"
+            app:destination="@id/add_new_tovar_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="priceless.uz.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/add_new_tovar_fragment"
+        android:name="priceless.uz.tovar.add_new_tovar_fragment"
+        android:label="fragment_add_new_tovar"
+        tools:layout="@layout/fragment_add_new_tovar" />
 </navigation>
