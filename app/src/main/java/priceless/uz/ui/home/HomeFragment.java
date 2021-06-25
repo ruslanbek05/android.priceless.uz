@@ -97,6 +97,7 @@ public class HomeFragment extends Fragment {
 
 
     private void signIn() {
+        Log.d("mine", "signIn clicked!");
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -106,8 +107,14 @@ public class HomeFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+//        Log.d("mine", "requestCode=" + requestCode);
+//        Log.d("mine", "resultCode=" + resultCode);
+//        Log.d("mine", "data=" + data);
+
+
         // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
+//            Log.d("mine", "requestCode == RC_SIGN_IN true");
             // The Task returned from this call is always completed, no need to attach
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
@@ -116,15 +123,18 @@ public class HomeFragment extends Fragment {
     }
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        Log.d("mine", "handleSignInResult going" );
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            Log.d("mine", "account" + account);
 
             // Signed in successfully, show authenticated UI.
             updateUI(account);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
+//            Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
+            Log.d("mine", "signInResult:failed code=" + e.getStatusCode());
             updateUI(null);
         }
     }
